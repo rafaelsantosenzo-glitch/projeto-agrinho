@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Agro 2026 - Enzo</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f5f5f5;
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, #1b5e20, #43a047);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+nav button {
+  margin: 10px;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  background: white;
+  color: green;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+nav button:hover {
+  background: #c8e6c9;
+}
+
+/* HERO */
+.hero {
+  background: url("https://images.unsplash.com/photo-1500595046743-cd271d694d30") center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h2 {
+  font-size: 40px;
+}
+
+.hero button {
+  padding: 15px 25px;
+  border: none;
+  background: yellowgreen;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+/* SEÇÕES */
+section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+h2 {
+  color: #2e7d32;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+/* GALERIA */
+.galeria {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.galeria img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* FORM */
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+}
+
+button {
+  padding: 10px 15px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #2e7d32;
+}
+
+/* FOOTER */
+footer {
+  background: #1b5e20;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌾 Agro 2026</h1>
+  <p>Inovação, tecnologia e sustentabilidade no campo</p>
+
+  <nav>
+    <button onclick="ir('sobre')">Sobre</button>
+    <button onclick="ir('tecnologia')">Tecnologia 2026</button>
+    <button onclick="ir('galeria')">Galeria</button>
+    <button onclick="ir('contato')">Contato</button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <h2>O futuro do agronegócio já começou</h2>
+  <p>É muito top isso ae alek</p>
+  <button onclick="alert('Bem-vindo ao Agro 2026 🌾 Desenvolvido por Enzo')">
+    Explorar
+  </button>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <h2>Sobre o Agro 2026</h2>
+  <p>
+    O agronegócio em 2026 é altamente tecnológico, utilizando inteligência artificial,
+    sensores, automação e análise de dados para aumentar produtividade e reduzir custos.
+  </p>
+</section>
+
+<!-- TECNOLOGIA -->
+<section id="tecnologia">
+  <h2>🚜 Tecnologia no Agro 2026</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>🤖 Inteligência Artificial</h3>
+      <p>IA decide irrigação, plantio e colheita com precisão.</p>
+    </div>
+
+    <div class="card">
+      <h3>🚁 Drones agrícolas</h3>
+      <p>Monitoramento aéreo de lavouras em tempo real.</p>
+    </div>
+
+    <div class="card">
+      <h3>🌱 Agricultura regenerativa</h3>
+      <p>Produção sustentável com menor impacto ambiental.</p>
+    </div>
+
+    <div class="card">
+      <h3>📡 Sensores IoT</h3>
+      <p>Monitoramento de solo, clima e produtividade.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <h2>🌾 Galeria do Campo</h2>
+
+  <div class="galeria">
+    <img src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0">
+    <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30">
+    <img src="https://images.unsplash.com/photo-1602526211305-5c1b1b1d1a1a">
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <h2>Contato</h2>
+
+  <input id="nome" placeholder="Seu nome">
+  <input id="email" placeholder="Seu email">
+
+  <button onclick="enviar()">Enviar mensagem</button>
+
+  <p id="msg"></p>
+</section>
+
+<footer>
+  <p>Projeto desenvolvido por <strong>Enzo</strong> 🌾</p>
+</footer>
+
+<script>
+function ir(id) {
+  document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+}
+
+function enviar() {
+  let n = document.getElementById("nome").value;
+  let e = document.getElementById("email").value;
+
+  if (n === "" || e === "") {
+    document.getElementById("msg").innerText = "⚠️ Preencha todos os campos!";
+  } else {
+    document.getElementById("msg").innerText =
+      "✅ Obrigado " + n + "! Mensagem enviada com sucesso.";
+  }
+}
+</script>
+
+</body>
+</html>
